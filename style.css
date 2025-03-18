@@ -39,7 +39,6 @@ a {
 .nav-bar {
 
     background-color: rgb(0, 0, 0);
-    /* background-color: transparent; */
     border-bottom: 2px solid rgb(158, 38, 250);
 
     height: 7vh;
@@ -52,6 +51,7 @@ a {
 
     z-index: 3;
     justify-content: center;
+    column-gap: 10vw;
     
 } 
 
@@ -69,12 +69,13 @@ a {
 
 
 .nav-bar-element{
-    padding: 0 8vh;
+    /* padding: 0 8vh; */
+   
     line-height: 2.7rem;
 
     white-space: nowrap;
  
-    font-size: 1.6vw;
+    font-size: 25px;
 
     color: white;
 
@@ -90,8 +91,8 @@ a {
 
 .nav-contact-me-button{
     position: absolute;
-    top: 1.2vw;
     left: 89vw;
+    top: 20%;
     width: 7vw;
     height: 2.3vw;
 
@@ -680,3 +681,48 @@ a {
     grid-column: 2/3;
     grid-row: 2/3;
 }
+
+
+@media (width <= 400px) {
+    .nav-bar{
+        display: none;
+    }
+    .gallery{
+        display: none;
+    }
+    #project-title{
+        font-size: 30px;
+    }
+    .contact-container{
+        display: flex;
+        flex-direction: column;
+    }
+
+
+    #CONTACTME{
+        height: 100vh;
+    }
+
+    .contact-me-form{
+        margin: 0 auto;
+    }
+
+    .messenger-info{
+        width: 100%;
+        height: 40px;
+        border-radius: 20px;
+        font-size: 15px;
+    }
+
+    .message{
+        width: 100%;
+    }
+
+    .other-contact-ways{
+        display: none;
+        /* display: flex;
+        margin: 0 auto; */
+    }
+
+
+  }
