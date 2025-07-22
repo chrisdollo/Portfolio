@@ -12,11 +12,38 @@
     
     
     <title>Chris's Hub'</title>
+
+
+    <!-- logic to notify me if somebody visits my website -->
+
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script>
+        window.addEventListener("load", function () {
+            if (!sessionStorage.getItem("visit-notified")) {
+            emailjs.init("4QSHG7Tbt0HgIxvcn");
+
+            emailjs.send("service_viiz24l", "template_6jfh38c", {
+                from_name: "Website Visitor",
+                message: "Someone just visited your portfolio!",
+            }).then(function(response) {
+                console.log("Email sent!", response.status, response.text);
+                sessionStorage.setItem("visit-notified", "true");
+            }, function(error) {
+                console.error("Failed to send email", error);
+            });
+            } else {
+            console.log("Already notified this session");
+            }
+        });
+    </script>
+
+      
+
 </head>
 <body>
 
     <div class="nav-bar">
-        <a href="" class="nav-logo">Chris's <br> Hub.</a>
+        <a href="" class="nav-logo">Chrfis's <br> Hub.</a>
         <a class="nav-bar-element" id="nav-about" href="#ABOUTME">About me</a>
         <a class="nav-bar-element" id="nav-projects" href="#CODINGPROJECTS">Coding Projects</a>
         <a class="nav-bar-element" id="nav-coursework" href="#CONTACTME">Contacts</a>
@@ -388,6 +415,14 @@
             
         </div> -->
     </div>
+
+
+    <!-- Add this to your HTML -->
+        <form action="https://formsubmit.co/dollochrisdavid@gmail.com" method="POST" id="trackForm">
+            <input type="hidden" name="message" value="Someone clicked the link!" />
+        </form>
+        
+        <a href="https://chris-hub.netlify.app/" onclick="document.getElementById('trackForm').submit()">Visit my website</a> 
 
 </body>
 </html>
