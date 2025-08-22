@@ -117,6 +117,39 @@ a {
 
 
 
+@media (width < 700px) {
+
+    .nav-logo{
+        display: none;
+    }
+
+    .nav-contact-me-button{
+        display: none;
+    }
+
+    .nav-bar-element{
+        font-size: 16px;
+    }
+
+
+
+
+    #PROJECTS{
+        height: auto;
+        padding-top: 70px;
+    }
+   
+    #CODINGPROJECTS{
+        display: none;
+    }
+
+    #CONTACTME{
+        display: none;
+    }
+  }
+
+
+
 
 
 /* LANDING PAGE */
@@ -125,10 +158,7 @@ a {
     text-align: center;
     justify-content: center;
     margin-bottom: 100px;
-    border-color: yellow;
     padding-top: 50px;
-
-
 }
 
 .info{
@@ -205,6 +235,84 @@ a {
 
 
 
+@media (width < 700px) {
+
+    #LANDINGPAGE{
+        margin-bottom: 20px;
+    }
+
+    .info{
+        text-align: center;
+        margin-top: 7vh;
+        width:100%;
+        white-space: nowrap;
+    }
+
+    .landing-page-name{
+        font-size: 80px;
+        text-wrap: wrap;
+        text-align: center;
+
+        margin-top: 10%;
+        margin-bottom: 8%;
+    }
+
+    .landing-page-content{
+        display: grid;
+        gap: 0 0;
+        grid-template-rows: 3fr 2fr;
+
+        justify-content: center;
+        text-align: center;
+        place-content: center;
+    }
+
+    .landing-page-photo{
+        /* border: 1px solid red; */
+
+        /* border-radius: 40%; */
+        /* display: none; */
+        /* grid-row: 1/2;
+        object-fit: cover; */
+    }
+
+    .landing-page-photo img{
+        height: 300px;
+        width: 300px;
+        object-fit: cover;
+        border-radius: 15px;
+        /* zoom: 1.2; */
+    }
+
+    .landing-page-text{
+        margin-top: 10px;
+        grid-row: 2/3 ;
+    }
+ 
+    .landing-page-text-box{
+    } 
+
+    .landing-page-subtitles{
+        text-align: center;
+        margin-bottom: 3.2vh;  
+        /* width: 90%;       */
+    }
+
+    .landing-page-subtitles-questions{
+        display: none;
+    }
+
+    .landing-page-subtitles-answers{
+        font-size: 20px;
+        color: white;
+        text-wrap: wrap;        
+        display: contents;
+    }
+
+}
+
+
+
 /* PAGE PROPERTIES */
 .page{
     justify-content: center;
@@ -225,6 +333,31 @@ a {
 
     color: rgb(158, 38, 250)
 }
+
+#ABOUTME{
+    height: auto;
+    padding-top: 70px;
+}
+
+#about-title{
+    font-size: 100px;
+    color: rgb(158, 38, 250);
+    /* margin-bottom: 25px; */
+}
+
+.introduction{
+    font-size: 28px;
+}
+
+.introduction-links{
+    text-decoration: underline;
+}
+
+.introduction-links:hover{
+    color: rgb(158, 38, 250);
+    cursor: pointer;
+}
+
 
 .gallery{
     width: 100%;
@@ -404,29 +537,108 @@ a {
 
 
 
-#ABOUTME{
-    height: auto;
-    padding-top: 70px;
+
+
+@media (width < 700px) {
+
+    /* PAGE PROPERTIES */
+    .page{   
+        align-content: center;
+        place-content: center;
+        margin: 0 auto;
+        justify-content: center;
+        text-align: center;
+    }
+
+    #about-title{
+        font-size: 60px;    
+    }
+
+    .introduction{
+        font-size: 16px;
+        width: 80%;
+        line-height: 20px;
+        justify-content: first baseline;
+   
+        margin: 0 auto;
+    }
+
+    .computer-breaks-text{
+        display: none;
+    }
+    
+    .introduction-links{
+        text-decoration: underline;
+    }
+    
+    .introduction-links:active{
+        color: rgb(158, 38, 250);
+        cursor: pointer;
+    }
+
+
+
+
+    .gallery{
+        all: unset;
+    }
+
+    .gallery-container{
+        all: unset;
+
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        grid-row: 1fr 1fr;
+    }
+
+    .gallery-item{
+        all: unset;
+
+        height: 100px;
+        width: 100px;
+        object-fit: contain;
+    }
+
+    .gallery-item-1{
+    }
+
+    .gallery-item-1 .gallery-item-5{
+    }
+
+    .gallery-item-2, .gallery-item-4{
+ 
+    }
+
+    .gallery-item-2{
+    }
+
+    .gallery-item-3{
+    }
+
+    .gallery-item-4{
+    }
+
+    .gallery-item-5{
+    }
+
+
+
+
+    .gallery-controls{
+        display: none;
+    }
 }
 
-#about-title{
-    font-size: 100px;
-    color: rgb(158, 38, 250);
-    /* margin-bottom: 25px; */
-}
 
-.introduction{
-    font-size: 28px;
-}
 
-.introduction-links{
-    text-decoration: underline;
-}
 
-.introduction-links:hover{
-    color: rgb(158, 38, 250);
-    cursor: pointer;
-}
+
+   
+
+
+
+
+
 
 
 
@@ -683,11 +895,9 @@ a {
 }
 
 
-@media (width <= 400px) {
-    .nav-bar{
-        display: none;
-    }
-    .gallery{
+@media (width < 700px) {
+    
+    /* .gallery{
         display: none;
     }
     #project-title{
@@ -720,9 +930,8 @@ a {
 
     .other-contact-ways{
         display: none;
-        /* display: flex;
-        margin: 0 auto; */
-    }
+       
+    } */
 
 
   }
