@@ -138,10 +138,6 @@ a {
         height: auto;
         padding-top: 70px;
     }
-   
-    #CODINGPROJECTS{
-        display: none;
-    }
 
     #CONTACTME{
         display: none;
@@ -550,6 +546,10 @@ a {
         text-align: center;
     }
 
+    .page-title{
+        font-size: 60px;  
+    }
+
     #about-title{
         font-size: 60px;    
     }
@@ -560,7 +560,10 @@ a {
         line-height: 20px;
         justify-content: first baseline;
    
-        margin: 0 auto;
+        margin: 20px auto;
+
+        /* margin-bottom: 15px; */
+        
     }
 
     .computer-breaks-text{
@@ -581,51 +584,94 @@ a {
 
     .gallery{
         all: unset;
+        
     }
 
     .gallery-container{
         all: unset;
-
         display: grid;
-        grid-template-columns: repeat(6, 1fr);
-        grid-row: 1fr 1fr;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 1fr 1fr 1fr;
+        width: 90%;
+        margin: 0 auto;
+        gap: 10px;
+
     }
 
     .gallery-item{
         all: unset;
 
-        height: 100px;
-        width: 100px;
-        object-fit: contain;
+        height: 200px;
+        width: 100%;
+        object-fit: fill;
+
+        align-content: center;
+        justify-content: center;
+        margin: 0 auto;
+    
+    }
+
+    .img-cont{
+    }
+
+    .img-cont-1{
+        grid-row: 1/2;
+        overflow: hidden;
     }
 
     .gallery-item-1{
+        object-fit: cover;
+        object-position: -0px -100px;
     }
 
-    .gallery-item-1 .gallery-item-5{
-    }
-
-    .gallery-item-2, .gallery-item-4{
- 
+    .img-cont-2{
+        grid-row: 1/2;
+        overflow: hidden;   
     }
 
     .gallery-item-2{
+        object-fit: cover;
+    }
+
+
+    .img-cont-3{
+        grid-row: 2/3;
+        overflow: hidden;   
     }
 
     .gallery-item-3{
+        object-fit: cover;
+    }
+
+
+    .img-cont-4{
+        grid-row: 2/3;
+        overflow: hidden;   
     }
 
     .gallery-item-4{
+        object-fit: cover;
+        object-position: 0px -10px;
+    }
+
+
+    .img-cont-5{
+        grid-row: 3/4;
+        overflow: hidden;   
     }
 
     .gallery-item-5{
+        object-fit: cover;
+        /* object-position: 0px -10px; */
     }
 
-
-
-
     .gallery-controls{
-        display: none;
+       display: none;
+    }
+
+    .gallery-item{
+        border-radius: 25px;
+        /* border: 1px solid red; */
     }
 }
 
@@ -646,9 +692,10 @@ a {
 /* PROJECTS  */
 #CODINGPROJECTS{
     /* background-color: aquamarine; */
-    padding-top: 30px;
-    
+    padding-top: 30px; 
 }
+
+
 
 #project-title{
     font-size: 100px;
@@ -740,6 +787,71 @@ a {
     align-items: center;
     justify-content: center;
  }
+
+
+@media (width < 700px) {
+
+    #CODINGPROJECTS{
+        /* background-color: aquamarine; */
+        padding-top: 30px; 
+    }
+
+    /* .page-title{
+        font-size: 20px;
+    } */
+
+    #project-title{
+        font-size: 60px;
+    }
+
+    .project-type-title{
+        font-size: 30px;
+        margin-bottom: 15px;
+    }   
+    
+    
+    .project-type-container{
+        all: unset;
+        height: auto;
+        gap: 10px;
+        display: flex;
+        flex-wrap: wrap;
+        width: 90%;
+        margin: 0 auto;
+        justify-content: center;
+    }
+
+    .project-card-v2-container{
+        /* all: unset; */
+        height: 260px;
+        width: 140px;
+        min-width: 140px;
+    }
+
+    .project-card-v2-text{
+        font-size: 12px;
+        grid-template-rows: repeat(8, 1fr);
+    }
+
+    .project-card-v2-project-description{
+        grid-row: 2/7;
+    }
+
+    .project-card-v2 img{
+        margin-bottom: 5px;
+    }
+
+    .project-card-v2-project-skills{
+        grid-row: 7/8;
+    }
+
+
+    /* @media (width < 700px) {
+
+    } */
+
+}
+
 
 
 
