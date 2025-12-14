@@ -1,3 +1,29 @@
+// Theme Toggle Functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const themeToggle = document.getElementById('theme-toggle');
+    const body = document.body;
+
+    // Check for saved theme preference or default to dark mode
+    const savedTheme = localStorage.getItem('theme');
+
+    if (savedTheme === 'light') {
+        body.classList.add('light-theme');
+    }
+
+    // Toggle theme on button click
+    themeToggle.addEventListener('click', function() {
+        body.classList.toggle('light-theme');
+
+        // Save theme preference
+        if (body.classList.contains('light-theme')) {
+            localStorage.setItem('theme', 'light');
+        } else {
+            localStorage.setItem('theme', 'dark');
+        }
+    });
+});
+
+
 // Gallery carousel code - commented out since gallery is now scrollable
 // const galleryContainer = document.querySelector(".gallery-container");
 // const galleryControlsContainer = document.querySelector(".gallery-controls");
