@@ -17,19 +17,32 @@
     <script>
         window.addEventListener("load", function () {
             if (!sessionStorage.getItem("visit-notified")) {
-            emailjs.init("4QSHG7Tbt0HgIxvcn");
+                emailjs.init("4QSHG7Tbt0HgIxvcn");
 
-            emailjs.send("service_viiz24l", "template_6jfh38c", {
-                from_name: "Website Visitor",
-                message: "Someone just visited your portfolio!",
-            }).then(function(response) {
-                console.log("Email sent!", response.status, response.text);
-                sessionStorage.setItem("visit-notified", "true");
-            }, function(error) {
-                console.error("Failed to send email", error);
-            });
-            } else {
-            console.log("Already notified this session");
+                fetch("https://ipapi.co/json/")
+                    .then(function(res) { return res.json(); })
+                    .then(function(geo) {
+                        var location = (geo.city && geo.country_name)
+                            ? geo.city + ", " + geo.country_name
+                            : "Unknown location";
+
+                        emailjs.send("service_viiz24l", "template_6jfh38c", {
+                            from_name: "Website Visitor",
+                            message: "Someone just visited your portfolio from " + location + "!",
+                        }).then(function(response) {
+                            sessionStorage.setItem("visit-notified", "true");
+                        }, function(error) {
+                            console.error("Failed to send email", error);
+                        });
+                    })
+                    .catch(function() {
+                        emailjs.send("service_viiz24l", "template_6jfh38c", {
+                            from_name: "Website Visitor",
+                            message: "Someone just visited your portfolio! (location unavailable)",
+                        }).then(function() {
+                            sessionStorage.setItem("visit-notified", "true");
+                        });
+                    });
             }
         });
     </script>
