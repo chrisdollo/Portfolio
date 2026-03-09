@@ -19,26 +19,49 @@
             if (!sessionStorage.getItem("visit-notified")) {
                 emailjs.init("4QSHG7Tbt0HgIxvcn");
 
+                var now = new Date().toLocaleString();
+                var device = /Mobi|Android/i.test(navigator.userAgent) ? "Mobile" : "Desktop";
+                var referrer = document.referrer || "Direct / unknown";
+                var screen_res = screen.width + "x" + screen.height;
+
                 fetch("https://ipapi.co/json/")
                     .then(function(res) { return res.json(); })
                     .then(function(geo) {
                         var location = (geo.city && geo.country_name)
-                            ? geo.city + ", " + geo.country_name
+                            ? geo.city + ", " + geo.region + ", " + geo.country_name
                             : "Unknown location";
+
+                        var message =
+                            "Time: " + now + "\n" +
+                            "Location: " + location + "\n" +
+                            "ISP: " + (geo.org || "Unknown") + "\n" +
+                            "Timezone: " + (geo.timezone || "Unknown") + "\n" +
+                            "Device: " + device + "\n" +
+                            "Screen: " + screen_res + "\n" +
+                            "Referrer: " + referrer + "\n" +
+                            "Browser: " + navigator.userAgent;
 
                         emailjs.send("service_viiz24l", "template_6jfh38c", {
                             from_name: "Website Visitor",
-                            message: "Someone just visited your portfolio from " + location + "!",
-                        }).then(function(response) {
+                            message: message,
+                        }).then(function() {
                             sessionStorage.setItem("visit-notified", "true");
                         }, function(error) {
                             console.error("Failed to send email", error);
                         });
                     })
                     .catch(function() {
+                        var message =
+                            "Time: " + now + "\n" +
+                            "Location: Unknown\n" +
+                            "Device: " + device + "\n" +
+                            "Screen: " + screen_res + "\n" +
+                            "Referrer: " + referrer + "\n" +
+                            "Browser: " + navigator.userAgent;
+
                         emailjs.send("service_viiz24l", "template_6jfh38c", {
                             from_name: "Website Visitor",
-                            message: "Someone just visited your portfolio! (location unavailable)",
+                            message: message,
                         }).then(function() {
                             sessionStorage.setItem("visit-notified", "true");
                         });
