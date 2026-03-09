@@ -695,8 +695,61 @@ body.light-theme .moon-icon{
     font-size: 0.85rem;
     font-weight: 500;
     color: var(--accent-primary);
-    margin-top: auto;
     transition: color 0.3s ease;
+}
+
+.project-card-buttons {
+    display: flex;
+    gap: 8px;
+    margin-top: auto;
+    padding-top: 4px;
+}
+
+.project-card-btn {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    text-decoration: none;
+    font-family: inherit;
+}
+
+.project-card-btn-filled {
+    background: var(--accent-primary);
+    color: white;
+    border: none;
+}
+
+.project-card-btn-filled:hover {
+    background: var(--accent-hover);
+    transform: translateY(-2px);
+}
+
+.project-card-btn-outline {
+    background: transparent;
+    color: var(--accent-primary);
+    border: 1px solid var(--accent-primary);
+}
+
+.project-card-btn-outline:hover {
+    background: var(--accent-light);
+    transform: translateY(-2px);
+}
+
+.project-card-btn-disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+}
+
+.project-card-btn-disabled:hover {
+    transform: none;
+    background: var(--accent-primary);
 }
 
 
