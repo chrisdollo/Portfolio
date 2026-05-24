@@ -22,6 +22,23 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
+    // Photo Carousel
+    const gallery = document.querySelector('.photos-gallery');
+    const leftArrow = document.querySelector('.carousel-arrow-left');
+    const rightArrow = document.querySelector('.carousel-arrow-right');
+
+    if (gallery && leftArrow && rightArrow) {
+        const scrollAmount = 202;
+
+        leftArrow.addEventListener('click', () => {
+            gallery.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+        });
+
+        rightArrow.addEventListener('click', () => {
+            gallery.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+        });
+    }
+
     // Citation Copy Functionality
     const citeButtons = document.querySelectorAll('.cite-button');
 
