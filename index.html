@@ -9,6 +9,7 @@
     <title>Chris Dollo</title>
 
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    
     <script>
         window.addEventListener("load", function () {
             if (!sessionStorage.getItem("visit-notified")) {
@@ -68,7 +69,6 @@
             <a class="nav-bar-element" href="#ABOUTME">About</a>
             <a class="nav-bar-element" href="#EXPERIENCE">Experience</a>
             <a class="nav-bar-element" href="#CODINGPROJECTS">Projects</a>
-            <a class="nav-bar-element" href="#PUBLICATIONS">Publications</a>
             <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
                 <svg class="sun-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <circle cx="12" cy="12" r="5"></circle>
@@ -86,64 +86,192 @@
 
 
     <div id="ABOUTME" class="page">
-        <div class="about-container">
-            <div class="about-header">
-                <h1 class="about-name">Chris Dollo</h1>
-                <p class="about-subtitle">Software Engineer &amp; ML Researcher</p>
+        <div class="about-layout">
+            <div class="about-container">
+                <div class="about-header">
+                    <h1 class="about-name">Chris Dollo</h1>
+                    <p class="about-subtitle">Software Engineer &amp; ML Researcher</p>
+                </div>
+
+                <div class="about-info-grid">
+                    <div class="about-info-item">
+                        <span class="about-label">Education</span>
+                        <span class="about-value">M.S. Computer Science, UMD</span>
+                        <span class="about-value">B.S. Computer Science, UMBC</span>
+                    </div>
+                    <div class="about-info-item">
+                        <!-- <span class="about-label">Research</span>
+                        <span class="about-value">EMG </span> -->
+                    </div>
+                    <div class="about-info-item">
+                        <span class="about-label">Focus Area</span>
+                        <span class="about-value">Computer Vision &amp; ML Systems</span>
+                    </div>
+                </div>
+
+                <p class="biography-text">
+                    Software engineer and ML researcher with industry and academic experience in computer vision, gesture recognition, and full-stack development. Currently pursuing an M.S. in Computer Science at UMD. Co-author of a 2025 Nature Scientific Reports publication on hand gesture reconstruction using motion synergies.
+                </p>
+
+                <div class="about-bottom">
+                    <div class="about-links">
+                        <a href="/DOCS/Resume_Chris_Dollo.pdf" class="about-link-button" target="_blank" rel="noopener noreferrer">Resume</a>
+                        <a href="https://github.com/chrisdollo" class="about-link-button about-link-button-outline" target="_blank" rel="noopener noreferrer">GitHub</a>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/chrisdollo/" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                                <rect x="2" y="9" width="4" height="12"></rect>
+                                <circle cx="4" cy="4" r="2"></circle>
+                            </svg>
+                            <span>LinkedIn</span>
+                        </a>
+                        <a href="https://scholar.google.com/citations?hl=en&user=b-DBKY0AAAAJ" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="Google Scholar">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 24a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm0-24L0 9.5l4.838 3.94A8 8 0 0 1 12 9a8 8 0 0 1 7.162 4.44L24 9.5z"/>
+                            </svg>
+                            <span>Scholar</span>
+                        </a>
+                        <a href="mailto:dollochrisdavid@gmail.com" class="social-link" aria-label="Email">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                <polyline points="22,6 12,13 2,6"></polyline>
+                            </svg>
+                            <span>Email</span>
+                        </a>
+                    </div>
+                </div>
             </div>
 
-            <div class="about-info-grid">
-                <div class="about-info-item">
-                    <span class="about-label">Education</span>
-                    <span class="about-value">M.S. Computer Science, UMD</span>
-                </div>
-                <div class="about-info-item">
-                    <!-- <span class="about-label">Research</span>
-                    <span class="about-value">EMG </span> -->
-                </div>
-                <div class="about-info-item">
-                    <span class="about-label">Focus Area</span>
-                    <span class="about-value">Computer Vision &amp; ML Systems</span>
-                </div>
-            </div>
+            <div class="about-cards">
 
-            <p class="biography-text">
-                Software engineer and ML researcher with industry and academic experience in computer vision, gesture recognition, and full-stack development. Currently pursuing an M.S. in Computer Science at UMD. Co-author of a 2025 Nature Scientific Reports publication on hand gesture reconstruction using motion synergies.
-            </p>
+                <!-- Now playing (placeholder) -->
+                <div class="about-card card-nowplaying">
+                    <div class="card-head">
+                        <span class="card-label"><span class="nowrap">Now playing</span> <span class="nowrap">&middot; Apple Music</span></span>
+                        <span class="card-badge">Preview</span>
+                    </div>
+                    <div class="np-track">
+                        <div class="np-art" aria-hidden="true">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"></path>
+                            </svg>
+                        </div>
+                        <div class="np-meta">
+                            <span class="np-title">Blinding Lights</span>
+                            <span class="np-artist">The Weeknd</span>
+                        </div>
+                        <div class="np-bars" aria-hidden="true">
+                            <span style="--h: 10"></span>
+                            <span style="--h: 7"></span>
+                            <span style="--h: 14"></span>
+                            <span style="--h: 7"></span>
+                        </div>
+                    </div>
+                </div>
 
-            <div class="about-bottom">
-                <div class="about-links">
-                    <a href="/DOCS/Resume_Chris_Dollo.pdf" class="about-link-button" target="_blank" rel="noopener noreferrer">Resume</a>
-                    <a href="https://github.com/chrisdollo" class="about-link-button about-link-button-outline" target="_blank" rel="noopener noreferrer">GitHub</a>
+                <!-- Now (placeholder) -->
+                <div class="about-card card-now">
+                    <span class="card-label">Now</span>
+                    <dl class="now-list">
+                        <div class="now-row">
+                            <dt>Building</dt>
+                            <dd>mytorch &mdash; a from-scratch PyTorch</dd>
+                        </div>
+                        <div class="now-row">
+                            <dt>Learning</dt>
+                            <dd>CUDA basics, MS coursework at UMD</dd>
+                        </div>
+                        <div class="now-row">
+                            <dt>Practicing</dt>
+                            <dd>12-bar blues soloing, guitar</dd>
+                        </div>
+                    </dl>
                 </div>
-                <div class="social-links">
-                    <a href="https://www.linkedin.com/in/chrisdollo/" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
-                            <rect x="2" y="9" width="4" height="12"></rect>
-                            <circle cx="4" cy="4" r="2"></circle>
-                        </svg>
-                        <span>LinkedIn</span>
-                    </a>
-                    <a href="https://scholar.google.com/citations?hl=en&user=b-DBKY0AAAAJ" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="Google Scholar">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M12 24a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm0-24L0 9.5l4.838 3.94A8 8 0 0 1 12 9a8 8 0 0 1 7.162 4.44L24 9.5z"/>
-                        </svg>
-                        <span>Scholar</span>
-                    </a>
-                    <a href="mailto:dollochrisdavid@gmail.com" class="social-link" aria-label="Email">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-                            <polyline points="22,6 12,13 2,6"></polyline>
-                        </svg>
-                        <span>Email</span>
-                    </a>
+
+                <!-- Status (placeholder) -->
+                <div class="about-card card-status">
+                    <span class="card-label">Status</span>
+                    <div class="status-time">10:43 PM <span class="status-tz">ET</span></div>
+                    <div class="status-info">
+                        <span class="status-place">College Park, MD</span>
+                        <span class="status-open"><span class="status-dot" aria-hidden="true"></span>Open to Summer 2027 internships</span>
+                    </div>
                 </div>
+
+                <!-- GitHub activity (placeholder) -->
+                <div class="about-card card-github">
+                    <div class="card-head">
+                        <span class="card-label">GitHub activity</span>
+                        <span class="card-badge">Preview</span>
+                    </div>
+                    <div class="gh-bars" aria-hidden="true">
+                        <span class="is-idle" style="--h: 5"></span>
+                        <span style="--h: 15"></span>
+                        <span class="is-idle" style="--h: 4"></span>
+                        <span style="--h: 25"></span>
+                        <span style="--h: 18"></span>
+                        <span class="is-idle" style="--h: 8"></span>
+                        <span style="--h: 28"></span>
+                    </div>
+                    <div class="gh-latest">
+                        <span class="gh-repo">hand_gestures</span>
+                        <span class="gh-commit">Add 32-class live confidence overlay</span>
+                    </div>
+                </div>
+
+                <!-- Guitar (placeholder) -->
+                <div class="about-card card-guitar">
+                    <span class="card-label">Guitar</span>
+                    <svg class="guitar-board" viewBox="0 0 200 50" role="img" aria-label="Guitar fretboard diagram">
+                        <g class="gb-lines">
+                            <line x1="2" y1="5" x2="200" y2="5"></line>
+                            <line x1="2" y1="13" x2="200" y2="13"></line>
+                            <line x1="2" y1="21" x2="200" y2="21"></line>
+                            <line x1="2" y1="29" x2="200" y2="29"></line>
+                            <line x1="2" y1="37" x2="200" y2="37"></line>
+                            <line x1="2" y1="45" x2="200" y2="45"></line>
+                            <line x1="47" y1="5" x2="47" y2="45"></line>
+                            <line x1="92" y1="5" x2="92" y2="45"></line>
+                            <line x1="137" y1="5" x2="137" y2="45"></line>
+                            <line x1="182" y1="5" x2="182" y2="45"></line>
+                        </g>
+                        <line class="gb-nut" x1="2" y1="4" x2="2" y2="46"></line>
+                        <g class="gb-dots">
+                            <circle cx="24.5" cy="13" r="5"></circle>
+                            <circle cx="69.5" cy="21" r="5"></circle>
+                            <circle cx="114.5" cy="29" r="5"></circle>
+                            <circle cx="159.5" cy="37" r="5"></circle>
+                        </g>
+                    </svg>
+                    <span class="guitar-caption">Working through a 12-bar blues in E</span>
+                </div>
+
+                <!-- Phrase of the day (placeholder) -->
+                <div class="about-card card-phrase">
+                    <div class="card-head">
+                        <span class="card-label">Phrase of the day</span>
+                        <button type="button" class="card-icon-btn" aria-label="Show another phrase">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="23 4 23 10 17 10"></polyline>
+                                <polyline points="1 20 1 14 7 14"></polyline>
+                                <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="phrase">
+                        <p class="phrase-text">Petit &agrave; petit, l'oiseau fait son nid.</p>
+                        <p class="phrase-translation">Little by little, the bird builds its nest.</p>
+                    </div>
+                </div>
+
             </div>
         </div>
     </div>
 
 
+    <!-- Photo gallery: commented out for now. Its CSS, the carousel JS and the click-to-enlarge popup are still in place, so removing these comment markers brings it back.
     <div class="photos-section">
         <div class="photos-carousel">
             <button class="carousel-arrow carousel-arrow-left" aria-label="Previous photo">
@@ -165,6 +293,7 @@
             </button>
         </div>
     </div>
+    -->
 
 
     <div id="EXPERIENCE" class="page">
@@ -172,30 +301,29 @@
         <div class="timeline">
 
             <div class="timeline-item">
-                <div class="timeline-marker"></div>
                 <div class="timeline-card">
                     <div class="timeline-meta">
                         <span class="timeline-date">May 2026 – Aug 2026</span>
-                        <span class="timeline-loc">Peoria, IL</span>
+                        <span class="timeline-loc">Chicago, IL</span>
                     </div>
-                    <h3 class="timeline-role">Data Science Intern</h3>
+                    <h3 class="timeline-role">Data Scientist Intern</h3>
                     <span class="timeline-org">Caterpillar Inc.</span>
                     <ul class="timeline-bullets">
-                        <li>Developing data-driven ML models to support predictive maintenance and operational analytics across heavy equipment product lines.</li>
-                        <li>Building and evaluating pipelines for large-scale structured and time-series data using Python and SQL.</li>
-                        <li>Collaborating with cross-functional engineering teams to translate business requirements into scalable analytical solutions.</li>
+                        <li>Engineered an automated LLM evaluation framework in Python (Pytest, GitHub Actions) to quantify AI assistant quality after every commit, enabling rigorous, reproducible regression testing of model performance.</li>
+                        <li>Built scalable data processing pipelines leveraging Whisper, GPT-4o Transcribe, and multiple speech and language models to preprocess audio, generate transcripts, and support metric-driven evaluation of agent performance across large conversation datasets.</li>
+                        <li>Deployed Dockerized evaluation services (Docker Compose, microservices), partnering with engineers and stakeholders to deliver reproducible experimentation infrastructure for production machine learning systems.</li>
                     </ul>
                     <div class="timeline-tags">
                         <span class="timeline-tag">Python</span>
-                        <span class="timeline-tag">Machine Learning</span>
-                        <span class="timeline-tag">SQL</span>
-                        <span class="timeline-tag">Data Science</span>
+                        <span class="timeline-tag">LLM Evaluation</span>
+                        <span class="timeline-tag">GitHub Actions</span>
+                        <span class="timeline-tag">Docker</span>
+                        <span class="timeline-tag">Whisper</span>
                     </div>
                 </div>
             </div>
 
             <div class="timeline-item">
-                <div class="timeline-marker"></div>
                 <div class="timeline-card">
                     <div class="timeline-meta">
                         <span class="timeline-date">May 2025 – Aug 2025</span>
@@ -219,7 +347,6 @@
             </div>
 
             <div class="timeline-item">
-                <div class="timeline-marker"></div>
                 <div class="timeline-card">
                     <div class="timeline-meta">
                         <span class="timeline-date">Jan 2024 – Present</span>
@@ -250,130 +377,97 @@
     <div id="CODINGPROJECTS" class="page">
         <h1 class="page-title" id="project-title">Projects</h1>
 
-        <div class="project-category-section">
-            <div class="project-category-label">Hackathon</div>
-            <div class="project-type-container">
+        <div class="project-type-container">
 
-                <div class="project-card-v2-container">
-                    <a href="https://github.com/chrisdollo/verizon-1a-project-falcon" class="project-card-v2" target="_blank" rel="noopener noreferrer">
-                        <img src="/IMG/bird-detection-image.jpg" alt="Project Falcon" class="project-card-v2-img">
-                        <div class="project-card-v2-text">
-                            <div class="project-card-v2-project-title">Project Falcon</div>
-                            <div class="project-card-v2-project-description">YOLOv8 CV pipeline to automate cell tower equipment inspection — 94% accuracy across 14,000+ labeled images, reducing false detections by 20%.</div>
-                            <div class="project-card-v2-project-skills">YOLOv8 · PyTorch · Python · Roboflow</div>
-                        </div>
-                    </a>
-                </div>
-
-                <div class="project-card-v2-container">
-                    <div class="project-card-v2">
-                        <img src="/IMG/1741014962450.jpeg" alt="EcoRecyclr" class="project-card-v2-img">
-                        <div class="project-card-v2-text">
-                            <div class="project-card-v2-project-title">EcoRecyclr</div>
-                            <div class="project-card-v2-project-description">1st place at the Booz Allen Hamilton Code for Good Hackathon. Android app for real-time waste classification using ResNet-18 fine-tuned on 10,000+ images — 95% accuracy.</div>
-                            <div class="project-card-v2-project-skills">PyTorch · ResNet-18 · Android (Kotlin) · Flask</div>
-                            <div class="project-card-buttons">
-                                <a href="https://github.com/chrisdollo/eco-recyclr" class="project-card-btn project-card-btn-outline" target="_blank" rel="noopener noreferrer">GitHub</a>
-                                <a href="#" class="project-card-btn project-card-btn-filled" target="_blank" rel="noopener noreferrer">Demo</a>
-                            </div>
+            <div class="project-card-v2-container">
+                <div class="project-card-v2">
+                    <img src="/IMG/1741014962450.jpeg" alt="EcoRecyclr" class="project-card-v2-img">
+                    <div class="project-card-v2-text">
+                        <div class="project-card-v2-project-title">EcoRecyclr</div>
+                        <div class="project-card-v2-project-description">1st place at the Booz Allen Hamilton Code for Good Hackathon. Android app for real-time waste classification using ResNet-18 fine-tuned on 10,000+ images — 95% accuracy.</div>
+                        <div class="project-card-v2-project-skills">PyTorch · ResNet-18 · Android (Kotlin) · Flask</div>
+                        <div class="project-card-buttons">
+                            <a href="https://github.com/chrisdollo/eco-recyclr" class="project-card-btn project-card-btn-outline" target="_blank" rel="noopener noreferrer">GitHub</a>
                         </div>
                     </div>
                 </div>
-
             </div>
-        </div>
 
-        <div class="project-category-section">
-            <div class="project-category-label">Research</div>
-            <div class="project-type-container">
-
-                <div class="project-card-v2-container">
-                    <div class="project-card-v2">
-                        <img src="/IMG/hand.png" alt="Gesture Recognition" class="project-card-v2-img">
-                        <div class="project-card-v2-text">
-                            <div class="project-card-v2-project-title">Gesture Recognition</div>
-                            <div class="project-card-v2-project-description">Real-time system identifying 32 distinct hand gestures live from webcam using OpenCV and MediaPipe.</div>
-                            <div class="project-card-v2-project-skills">Python · OpenCV · MediaPipe</div>
-                            <div class="project-card-buttons">
-                                <a href="https://github.com/chrisdollo/hand_gestures" class="project-card-btn project-card-btn-outline" target="_blank" rel="noopener noreferrer">GitHub</a>
-                                <a href="#" class="project-card-btn project-card-btn-filled" target="_blank" rel="noopener noreferrer">Demo</a>
-                            </div>
+            <div class="project-card-v2-container">
+                <div class="project-card-v2">
+                    <img src="/IMG/hand.png" alt="Gesture Recognition" class="project-card-v2-img">
+                    <div class="project-card-v2-text">
+                        <div class="project-card-v2-project-title">Gesture Recognition</div>
+                        <div class="project-card-v2-project-description">Real-time system identifying 32 distinct hand gestures live from webcam using OpenCV and MediaPipe.</div>
+                        <div class="project-card-v2-project-skills">Python · OpenCV · MediaPipe</div>
+                        <div class="project-card-buttons">
+                            <a href="https://github.com/chrisdollo/hand_gestures" class="project-card-btn project-card-btn-outline" target="_blank" rel="noopener noreferrer">GitHub</a>
                         </div>
                     </div>
                 </div>
-
-                <div class="project-card-v2-container">
-                    <a href="https://github.com/chrisdollo/EMG" class="project-card-v2" target="_blank" rel="noopener noreferrer">
-                        <img src="/IMG/purple-hand.png" alt="PutEMG" class="project-card-v2-img">
-                        <div class="project-card-v2-text">
-                            <div class="project-card-v2-project-title">PutEMG Classifier</div>
-                            <div class="project-card-v2-project-description">Deep learning pipeline classifying 24 hand movements from 24-channel EMG sensor data — preprocessing, feature extraction, and model evaluation.</div>
-                            <div class="project-card-v2-project-skills">Python · PyTorch · MATLAB</div>
-                        </div>
-                    </a>
-                </div>
-
             </div>
-        </div>
 
-        <div class="project-category-section">
-            <div class="project-category-label">Games</div>
-            <div class="project-type-container">
+            <div class="project-card-v2-container">
+                <a href="https://github.com/chrisdollo/EMG" class="project-card-v2" target="_blank" rel="noopener noreferrer">
+                    <img src="/IMG/purple-hand.png" alt="PutEMG" class="project-card-v2-img">
+                    <div class="project-card-v2-text">
+                        <div class="project-card-v2-project-title">PutEMG Classifier</div>
+                        <div class="project-card-v2-project-description">Deep learning pipeline classifying 24 hand movements from 24-channel EMG sensor data — preprocessing, feature extraction, and model evaluation.</div>
+                        <div class="project-card-v2-project-skills">Python · PyTorch · MATLAB</div>
+                    </div>
+                </a>
+            </div>
 
-                <div class="project-card-v2-container">
-                    <div class="project-card-v2">
-                        <img src="/IMG/pacman-project-img.jpg" alt="Pacman" class="project-card-v2-img">
-                        <div class="project-card-v2-text">
-                            <div class="project-card-v2-project-title">Pacman</div>
-                            <div class="project-card-v2-project-description">Browser-based Pacman clone built from scratch — ghost AI, score tracking, and classic arcade mechanics.</div>
-                            <div class="project-card-v2-project-skills">HTML · JavaScript</div>
-                            <div class="project-card-buttons">
-                                <a href="https://github.com/chrisdollo/Pacman" class="project-card-btn project-card-btn-outline" target="_blank" rel="noopener noreferrer">GitHub</a>
-                                <a href="https://krispacman.netlify.app/" class="project-card-btn project-card-btn-filled" target="_blank" rel="noopener noreferrer">Play</a>
-                            </div>
+            <div class="project-card-v2-container">
+                <div class="project-card-v2">
+                    <img src="/IMG/pacman-project-img.jpg" alt="Pacman" class="project-card-v2-img">
+                    <div class="project-card-v2-text">
+                        <div class="project-card-v2-project-title">Pacman</div>
+                        <div class="project-card-v2-project-description">Browser-based Pacman clone built from scratch — ghost AI, score tracking, and classic arcade mechanics.</div>
+                        <div class="project-card-v2-project-skills">HTML · JavaScript</div>
+                        <div class="project-card-buttons">
+                            <a href="https://github.com/chrisdollo/Pacman" class="project-card-btn project-card-btn-outline" target="_blank" rel="noopener noreferrer">GitHub</a>
+                            <a href="https://krispacman.netlify.app/" class="project-card-btn project-card-btn-filled" target="_blank" rel="noopener noreferrer">Play</a>
                         </div>
                     </div>
                 </div>
-
             </div>
+
         </div>
     </div>
 
 
-    <div id="PUBLICATIONS" class="page">
-        <h1 class="page-title">Publications</h1>
-        <div class="publications-container">
-            <div class="publication-card">
-                <div class="publication-content">
-                    <h3 class="publication-title">Reconstructing hand gestures with synergies extracted from dance movements</h3>
-                    <p class="publication-authors">Parthan Olikkal, <strong>Chris Dollo</strong>, Akshara Ajendla, Ann Sofie Clemmensen &amp; Ramana Vinjamuri</p>
-                    <p class="publication-venue">Scientific Reports &bull; 2025</p>
-                    <p class="publication-abstract">
-                        A novel framework for understanding hand gestures through movement primitives derived from mudras — hand gestures from Bharatanatyam. Synergies extracted via Gaussian-modeled joint angular velocities reconstruct 75 hand gestures, achieving 95.78% accuracy for natural grasps and 92.99% for mudras, outperforming baseline models.
-                    </p>
-                    <div class="publication-buttons">
-                        <button class="cite-button" data-citation="Olikkal, P., Dollo, C., Ajendla, A. et al. Reconstructing hand gestures with synergies extracted from dance movements. Sci Rep 15, 41670 (2025). https://doi.org/10.1038/s41598-025-25563-7">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
-                                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
-                            </svg>
-                            Cite
-                        </button>
-                        <a href="https://doi.org/10.1038/s41598-025-25563-7" class="doi-button" target="_blank" rel="noopener noreferrer">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                                <polyline points="15 3 21 3 21 9"></polyline>
-                                <line x1="10" y1="14" x2="21" y2="3"></line>
-                            </svg>
-                            DOI
-                        </a>
-                    </div>
-                </div>
-                <div class="publication-image">
-                    <img src="/IMG/mudra-project-pic.png" alt="Publication figure">
-                </div>
-            </div>
+    <div id="CONTACT" class="page contact-section">
+        <h1 class="page-title">Get in touch</h1>
+        <p class="contact-text">Have a question or an opportunity in mind? I'd love to hear from you.</p>
+        <div class="contact-links">
+            <a href="mailto:dollochrisdavid@gmail.com" class="social-link" aria-label="Email">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                    <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+                <span>Email</span>
+            </a>
+            <a href="https://www.linkedin.com/in/chrisdollo/" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                    <rect x="2" y="9" width="4" height="12"></rect>
+                    <circle cx="4" cy="4" r="2"></circle>
+                </svg>
+                <span>LinkedIn</span>
+            </a>
         </div>
+    </div>
+
+
+    <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Photo viewer">
+        <button class="lightbox-close" aria-label="Close photo">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+        </button>
+        <img class="lightbox-img" src="" alt="">
     </div>
 
 

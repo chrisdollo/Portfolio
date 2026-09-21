@@ -39,32 +39,41 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Citation Copy Functionality
-    const citeButtons = document.querySelectorAll('.cite-button');
+    // Photo Lightbox
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = lightbox.querySelector('.lightbox-img');
+    const lightboxClose = lightbox.querySelector('.lightbox-close');
+    let lightboxTrigger = null;
 
-    citeButtons.forEach(button => {
-        button.addEventListener('click', function() {
-            const citation = this.getAttribute('data-citation');
+    function openLightbox(img) {
+        lightboxTrigger = img;
+        lightboxImg.src = img.src;
+        lightboxImg.alt = img.alt;
+        lightbox.classList.add('open');
+        body.classList.add('lightbox-open');
+        lightboxClose.focus();
+    }
 
-            // Copy to clipboard
-            navigator.clipboard.writeText(citation).then(() => {
-                // Change button text to show success
-                const originalHTML = this.innerHTML;
-                this.innerHTML = `
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <polyline points="20 6 9 17 4 12"></polyline>
-                    </svg>
-                    Copied!
-                `;
+    function closeLightbox() {
+        lightbox.classList.remove('open');
+        body.classList.remove('lightbox-open');
+        if (lightboxTrigger) lightboxTrigger.focus({ preventScroll: true });
+    }
 
-                // Reset button after 2 seconds
-                setTimeout(() => {
-                    this.innerHTML = originalHTML;
-                }, 2000);
-            }).catch(err => {
-                console.error('Failed to copy citation:', err);
-                alert('Failed to copy citation. Please try again.');
-            });
+    document.querySelectorAll('.gallery-img').forEach(img => {
+        img.tabIndex = 0;
+        img.addEventListener('click', () => openLightbox(img));
+        img.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                openLightbox(img);
+            }
         });
+    });
+
+    // Clicking anywhere on the overlay (image, backdrop or X) closes it
+    lightbox.addEventListener('click', closeLightbox);
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && lightbox.classList.contains('open')) closeLightbox();
     });
 });
