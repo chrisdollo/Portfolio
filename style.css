@@ -406,7 +406,7 @@ body.light-theme .moon-icon { display: none; }
     --status-green: #2dae69;
 
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 14px;
 }
 
@@ -612,30 +612,69 @@ body.light-theme .moon-icon { display: none; }
     color: var(--text-tertiary);
 }
 
-/* Guitar */
-.guitar-board {
+/* Now reading */
+.read-book {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.read-cover {
+    flex: none;
+    width: 40px;
+    height: 56px;
+    border-radius: 6px;
+    background: var(--card-accent);
+    color: var(--bg-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.read-meta {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    gap: 2px;
+    min-width: 0;
+}
+
+.read-title {
+    font-size: 1.05rem;
+    font-weight: 600;
+    line-height: 1.3;
+    color: var(--text-primary);
+}
+
+.read-author {
+    font-size: 0.9rem;
+    color: var(--text-tertiary);
+}
+
+.read-progress {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.read-bar {
+    flex: 1;
+    height: 4px;
+    border-radius: 2px;
+    background: var(--border-secondary);
+    overflow: hidden;
+}
+
+.read-bar span {
     display: block;
-    width: 100%;
-    max-width: 200px;
-    height: auto;
-    margin: 0 auto;
+    width: calc(var(--p) * 1%);
+    height: 100%;
+    border-radius: 2px;
+    background: var(--card-accent);
 }
 
-.gb-lines line {
-    stroke: var(--border-secondary);
-    stroke-width: 1;
-}
-
-.gb-nut {
-    stroke: var(--text-muted);
-    stroke-width: 2.5;
-}
-
-.gb-dots circle {
-    fill: var(--card-accent);
-}
-
-.guitar-caption {
+.read-pct {
+    flex: none;
     font-size: 0.88rem;
     color: var(--text-tertiary);
 }
@@ -697,7 +736,9 @@ body.light-theme .moon-icon { display: none; }
 .status-open,
 .gh-repo,
 .gh-commit,
-.guitar-caption,
+.read-title,
+.read-author,
+.read-pct,
 .phrase-text,
 .phrase-translation,
 .card-label,
@@ -707,10 +748,6 @@ body.light-theme .moon-icon { display: none; }
 
 @media (width < 1200px) {
     .about-layout { grid-template-columns: minmax(0, 1fr); gap: 40px; }
-}
-
-@media (width < 800px) {
-    .about-cards { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 
 @media (width < 560px) {
